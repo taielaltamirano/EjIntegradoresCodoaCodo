@@ -1,9 +1,9 @@
 class Persona:
   
-    def __init__(self, nombre = None, edad = None, dni = None):
+    def __init__(self, nombre, edad, documento):
         self.__nombre = nombre
         self.__edad = edad
-        self.__dni = dni
+        self.__documento = documento
 
 
     @property
@@ -17,8 +17,8 @@ class Persona:
      
      
     @property
-    def dni(self):
-        return self.__dni
+    def documento(self):
+        return self.__documento
 
 
     @nombre.setter
@@ -36,17 +36,19 @@ class Persona:
             self.__edad = edad    
 
 
-    @edad.setter
-    def dni(self,dni):
-        if self.__dni < 0 or self.__dni > 100000000:
+    @documento.setter
+    def documento(self,documento):
+        if self.__documento < 0:
             print("DNI inválido")
         else:
-            self.__dni = dni            
+            self.__documento = documento            
 
 e1 = Persona("Juan",15,40244)
 
+e1.nombre = "Pepo"
+e1.edad = 40
+e1.documento = 40804942
 
-
-
-
-print(e1.dni)
+print(e1.nombre)
+print(e1.edad)
+print(e1.documento)
