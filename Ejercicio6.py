@@ -66,5 +66,6 @@ class Persona:
         else:
             return False
 
-
+    def __str__(self):
+        return f"Nombre: {self.__nombre}, Edad: {self.__edad}, DNI: {self.__documento}"
 

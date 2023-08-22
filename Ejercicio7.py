@@ -1,3 +1,5 @@
+from Ejercicio6 import Persona
+
 class Cuenta:
 
     def __init__(self, titular = None, cantidad = None):
@@ -26,6 +28,7 @@ class Cuenta:
         print(f"Titular: {self.__titular}, Cantidad: {self.__cantidad}")
 
 
+
     def ingresar(self,cantidad):
         if cantidad < 0 :
             pass
@@ -33,9 +36,14 @@ class Cuenta:
             self.__cantidad += cantidad
 
 
+
     def retirar(self,cantidad):
         self.__cantidad -= cantidad
 
 
 
+
+persona = Persona("Mario",18,4020123)
+
+c1 = Cuenta(persona,12.5)
 
