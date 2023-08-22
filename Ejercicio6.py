@@ -1,9 +1,18 @@
 class Persona:
   
-    def __init__(self, nombre, edad, documento):
-        self.__nombre = nombre
-        self.__edad = edad
-        self.__documento = documento
+    def __init__(self, nombre = None, edad = None, documento = None):
+        if nombre == None:
+            self.__nombre = None
+        else:
+            self.__nombre = nombre
+        if edad == None:
+            self.__edad = None
+        else:
+            self.__edad = edad
+        if documento == None:
+            self.__documento = None
+        else:
+            self.__documento = documento
 
 
     @property
@@ -28,27 +37,34 @@ class Persona:
         else:
             self.__nombre = nuevo_nombre
 
+
     @edad.setter
-    def edad(self,edad):
-        if self.__edad < 0 or self.__edad > 100:
+    def edad(self,nueva_edad):
+        
+        if nueva_edad <= 0 or nueva_edad > 100 :
             print("Rango de edad inválido")
         else:
-            self.__edad = edad    
+            self.__edad = nueva_edad    
 
 
     @documento.setter
     def documento(self,documento):
-        if self.__documento < 0:
+        if documento <= 0:
             print("DNI inválido")
         else:
             self.__documento = documento            
 
-e1 = Persona("Juan",15,40244)
 
-e1.nombre = "Pepo"
-e1.edad = 40
-e1.documento = 40804942
+    def mostrar(self):
+        print(f"Nombre: {self.__nombre}, Edad: {self.__edad}, DNI: {self.__documento}")
 
-print(e1.nombre)
-print(e1.edad)
-print(e1.documento)
+
+
+    def es_mayor_de_edad(self):
+        if self.__edad >= 18:
+            return True
+        else:
+            return False
+
+
+
